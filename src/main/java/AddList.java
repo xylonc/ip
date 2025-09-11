@@ -29,10 +29,10 @@ public class AddList {
                 System.out.println(" " + list[taskNum]);
                 System.out.println("-".repeat(30));
             }else if(task.startsWith("deadline")) {//adding deadline
-                int indexOfby = task.indexOf("by");
-                String by = task.substring(indexOfby + 3);//add two cos index is for b
-                int indexOfSlash = task.indexOf("/");
-                String description = task.substring(0, indexOfSlash);
+                int indexBy = task.indexOf("by");
+                String by = task.substring(indexBy + 3);//add two cos index is for b
+                int indexSlash = task.indexOf("/");
+                String description = task.substring(0, indexSlash);
                 list[count] = new Deadline(description, by);
                 System.out.println("\n" + "-".repeat(30));
                 System.out.println("okies brother. I added this deadline!");
@@ -44,10 +44,10 @@ public class AddList {
             }else if(task.startsWith("event")) {
                 int indexFrom = task.indexOf("from");
                 int indexTo = task.indexOf("to");
-                int indexOfSlash = task.indexOf("/");
+                int indexSlash = task.indexOf("/");
                 String From = task.substring(indexFrom + 4 ,indexTo - 1 ); //takes timing between "from" and "to"
                 String To = task.substring(indexTo + 3);//takes the to timing
-                String description = task.substring(0, indexOfSlash);//description
+                String description = task.substring(0, indexSlash);//description
                 list[count] = new Events(description, To , From );
                 System.out.println("\n" + "-".repeat(30));
                 System.out.println("okies brother. I added this event!");
