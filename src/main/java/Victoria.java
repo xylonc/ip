@@ -10,8 +10,7 @@ public class Victoria {
         System.out.println("Hello from\n" + logo);
         System.out.println("-".repeat(30));
         System.out.println("Hello! I'm Victoria");
-        System.out.println("How may I help you?");
-        System.out.println("Type your command here!\n");
+        System.out.println("How may I help you?\n");
         System.out.println("-".repeat(30) + "\n");
         try {
             AddList.main(args);
