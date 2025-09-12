@@ -1,12 +1,13 @@
 import java.util.Scanner;
 public class AddList {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Task[] list = new Task[100];
         int count = 0;
         String task;
         Scanner scanner = new Scanner(System.in);
         while (true) {
             task = scanner.nextLine();
+            if (task.isEmpty()) throw new EmptyStringException();
             if (task.equals("list")) { //listing
                 System.out.println("-".repeat(30));
                 System.out.println("Here are your tasks:");
@@ -71,6 +72,9 @@ public class AddList {
                 System.out.println(" ");
                 System.out.println("-".repeat(30));
                 count++;
+            }
+            else {
+                throw new UnknownInputException();
             }
         }
     }
