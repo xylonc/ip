@@ -13,7 +13,7 @@ public class Victoria {
         System.out.println("How may I help you?\n");
         System.out.println("-".repeat(30) + "\n");
         try {
-            AddList.main(args);
+            AddListV2.main(args);
         }
         catch(EmptyStringException e){
             System.out.println(":( there is no input , please type something");
