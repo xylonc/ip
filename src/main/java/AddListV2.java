@@ -1,5 +1,8 @@
+import java.io.FileWriter;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.File;
+import java.io.IOException;
 public class AddListV2 {
     public static ArrayList<Task> tasks = new ArrayList<>();
     public static void AddlistV2() throws Exception{
@@ -37,6 +40,9 @@ public class AddListV2 {
             case "delete":
                 deleteTask(arguments);
                 return;
+            case "save":
+                SaveFile(tasks);
+                break;
             default:
                 throw new UnknownInputException();
             }
@@ -104,7 +110,7 @@ public class AddListV2 {
         String From = args.substring(indexFrom + 4 ,indexTo - 1 ).trim(); //takes timing between "from" and "to"
         String To = args.substring(indexTo + 3).trim();//takes the to timing
         String description = args.substring(0, indexSlash).trim();//description
-        Task task = new Events(description, From, To);
+        Task task = new Events(description, To, From);
         tasks.add(task);
         System.out.println("okies brother. I added this event!");
         System.out.println(tasks.get(tasks.size()-1));
@@ -126,5 +132,19 @@ public class AddListV2 {
         System.out.println("now you only left with " + tasks.size() + " tasks!");
         System.out.println("-".repeat(30));
         System.out.println(" ".repeat(30));
+    }
+    private static void SaveFile(ArrayList<Task> tasks){
+        try {
+            File f = new File("tasks.txt");
+            //System.out.println(f.getAbsolutePath());
+            FileWriter fw = new FileWriter(f.getAbsolutePath() , true);
+            for(Task task: tasks) {
+                fw.write(task.toString() + System.lineSeparator());
+            }
+            fw.close();
+        }
+        catch (IOException e){
+            System.out.println("Error writing to file" + e.getLocalizedMessage());
+        }
     }
 }
