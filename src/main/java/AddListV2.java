@@ -34,6 +34,9 @@ public class AddListV2 {
             case "bye":
                 sayBye();
                 return;
+            case "delete":
+                deleteTask(arguments);
+                return;
             default:
                 throw new UnknownInputException();
             }
@@ -113,5 +116,15 @@ public class AddListV2 {
         System.out.println("\n" + "-".repeat(30));
         System.out.println("Bye.Hope to see you again soon!\n");
         System.out.println("-".repeat(30));
+    }
+    private static void deleteTask(String input) {
+        int index = Integer.parseInt(input.trim());
+        Task task = tasks.remove(index - 1);
+        System.out.println("-".repeat(30));
+        System.out.println("thy task have been vanquished!");
+        System.out.println(task);
+        System.out.println("now you only left with " + tasks.size() + " tasks!");
+        System.out.println("-".repeat(30));
+        System.out.println(" ".repeat(30));
     }
 }
