@@ -2,9 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class AddListV2 {
     public static ArrayList<Task> tasks = new ArrayList<>();
-    public static void main(String[] args) throws Exception {
-
-        //int count = 0;
+    public static void AddlistV2() throws Exception{
         String input;
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -36,11 +34,16 @@ public class AddListV2 {
             case "bye":
                 sayBye();
                 return;
+            default:
+                throw new UnknownInputException();
             }
         }
     }
 
     public static void listTask() {
+        if(tasks.isEmpty()) {
+            System.out.println("Shiok ah no tasks!");
+        }
         System.out.println("-".repeat(30));
         System.out.println("Here are your tasks bro:");
         for(int i = 0; i < tasks.size(); i++){
@@ -48,12 +51,13 @@ public class AddListV2 {
         }
         System.out.println("-".repeat(30));
     }
-    public static void addTask(String description) {
+    public static void addTask(String description) throws Exception {
+        if(description.isEmpty()) throw new EmptyStringException();
         Task task = new Task(description);
         tasks.add(task);
-        System.out.println("\n" + "-".repeat(30));
+        System.out.println("-".repeat(30));
         System.out.println("ok added the following task bro:");
-        System.out.println(task);
+        System.out.println(tasks.get(tasks.size()-1));
         System.out.println("now you got "+ tasks.size() + " tasks in your list.");
         System.out.println("-".repeat(30));
     }
@@ -85,7 +89,7 @@ public class AddListV2 {
         tasks.add(task);
         System.out.println("-".repeat(30));
         System.out.println("okies brother. I added this deadline!");
-        System.out.println(task);
+        System.out.println(tasks.get(tasks.size()-1));
         System.out.println("now you got: " + tasks.size() + " tasks");
         System.out.println(" ");
         System.out.println("-".repeat(30));
@@ -100,7 +104,7 @@ public class AddListV2 {
         Task task = new Events(description, From, To);
         tasks.add(task);
         System.out.println("okies brother. I added this event!");
-        System.out.println(tasks);
+        System.out.println(tasks.get(tasks.size()-1));
         System.out.println("now you got: " + tasks.size() + " tasks");
         System.out.println(" ");
         System.out.println("-".repeat(30));

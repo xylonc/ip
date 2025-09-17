@@ -1,4 +1,8 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Victoria {
+    public static ArrayList<Task> tasks = new ArrayList<>();
     public static void main(String[] args) throws Exception {
         String logo =
                 " __     ___  ____ \n"
@@ -13,7 +17,7 @@ public class Victoria {
         System.out.println("How may I help you?\n");
         System.out.println("-".repeat(30) + "\n");
         try {
-            AddListV2.main(args);
+            AddListV2.AddlistV2();
         }
         catch(EmptyStringException e){
             System.out.println(":( there is no input , please type something");
@@ -22,5 +26,5 @@ public class Victoria {
             System.out.println("oops sorry bro im not sure what does that mean, can you type another command");
         }
     }
-
 }
+
