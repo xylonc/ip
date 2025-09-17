@@ -1,0 +1,3 @@
+[ ] sleep
+[E][ ] call (from: Mon 2pm to: 4pm)
+[D][ ] work (by: Sunday)
