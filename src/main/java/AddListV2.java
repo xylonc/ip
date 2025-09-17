@@ -39,7 +39,7 @@ public class AddListV2 {
                 return;
             case "delete":
                 deleteTask(arguments);
-                return;
+                break;
             case "save":
                 SaveFile(tasks);
                 break;
