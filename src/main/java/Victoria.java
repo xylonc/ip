@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class Victoria {
     public static ArrayList<Task> tasks = new ArrayList<>();
+    private Ui ui;
+
     public static void main(String[] args) throws Exception {
         String logo =
                 " __     ___  ____ \n"
