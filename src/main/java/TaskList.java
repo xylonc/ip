@@ -73,4 +73,22 @@ public class TaskList {
         Task t = tasks.remove(index);
         ui.showDelete(t, size());
     }
+
+    public void find(String args, Ui ui) throws NothingFoundException, EmptyStringException {
+        ArrayList<Task> foundList = new ArrayList<>();
+        if (args.isEmpty()) throw new EmptyStringException();
+        for (Task t : tasks) {
+            String description = t.description;
+            if(description.contains(args)) {
+                foundList.add(t);
+            }
+        }
+        if (foundList.isEmpty()) throw new NothingFoundException();
+        ui.showLine();
+        ui.showListHeader();
+        for (int i = 0; i < foundList.size(); i++) {
+            System.out.println((i + 1) + ". " + foundList.get(i));
+        }
+        ui.showLine();
+    }
 }

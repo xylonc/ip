@@ -43,12 +43,17 @@ public class AddListV2 {
                 case "save":
                     storage.save(taskList.asList());
                     break;
+                case "find":
+                    taskList.find(pc.args, ui);
+                    break;
                 case "bye":
                     ui.showBye();
                     return;
                 }
             } catch (EmptyStringException e) {
                 ui.showError("Description cannot be empty.");
+            }catch(NothingFoundException e){
+                ui.showError("cant find anything eh");
             } catch (Exception e) {
                 ui.showError(e.getMessage());
             }

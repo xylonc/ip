@@ -14,6 +14,7 @@ public class Parser {
         case "bye":
         case "delete":
         case "save":
+        case "find":
             return new ParsedCommand(command, arguments);
         default:
             throw new UnknownInputException();
