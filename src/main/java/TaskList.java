@@ -1,6 +1,28 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Mutable container for {@link Task} objects with convenience methods
+ * used by the CLI (e.g., add/mark/unmark/delete/list/find).
+ *
+ * <p>Methods that accept raw {@code args} strings assume specific formats
+ * produced by your parser, e.g.:</p>
+ * <ul>
+ *   <li><b>addDeadline</b>: {@code "<description> /by <due>"}</li>
+ *   <li><b>addEvent</b>: {@code "<description> / from <start> to <end>"}</li>
+ *   <li><b>mark/unmark/delete</b>: a 1-based index like {@code "3"}</li>
+ *   <li><b>find</b>: a non-empty substring to search in descriptions</li>
+ * </ul>
+ *
+ * <p><strong>Note:</strong> {@link #asList()} returns the live backing list.
+ * Mutations through that view will affect this {@code TaskList}.</p>
+ *
+ * @see Task
+ * @see Deadline
+ * @see Events
+ * @see Todo
+ */
+
 public class TaskList {
     private final ArrayList<Task> tasks = new ArrayList<>();
 

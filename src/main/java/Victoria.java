@@ -1,9 +1,29 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
+/**
+ * Entry point for the Victoria CLI application.
+ *
+ * <p>This class prints a banner and greeting, then hands control to
+ * {@link AddListV2#AddlistV2()} to start the interactive task loop.
+ * It also handles a couple of user-input related exceptions to provide
+ * friendly error messages.</p>
+ *
+ * <p>Typical startup output:</p>
+ * <pre>{@code
+ * Hello from
+ *  __     ___  ____
+ *  \ \   / / |/ ___|
+ *   \ \ / /| ' /
+ *    \ V / | . \___
+ *     \_/  |_|| ___|
+ * ------------------------------
+ * Hello! I'm Victoria
+ * How may I help you?
+ *
+ * ------------------------------
+ * }</pre>
+ *
+ * @author  Xylon
+ */
 public class Victoria {
-    public static ArrayList<Task> tasks = new ArrayList<>();
-    private Ui ui;
 
     public static void main(String[] args) throws Exception {
         String logo =

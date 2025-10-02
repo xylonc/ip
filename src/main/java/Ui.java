@@ -1,4 +1,16 @@
 import java.util.Scanner;
+/**
+ * Console UI helper for reading user commands and printing
+ * formatted messages, separators, and status updates.
+ *
+ * <p>This class owns a {@link Scanner} bound to {@code System.in} for
+ * {@link #readCommand()} and provides convenience methods to keep output
+ * consistent across the application.</p>
+ *
+ * <p><strong>Note:</strong> Do not close the internal {@code Scanner};
+ * closing it would also close {@code System.in} for the entire JVM.</p>
+ *
+ */
 
 public class Ui {
     private final Scanner scanner = new Scanner(System.in);

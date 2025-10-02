@@ -1,3 +1,23 @@
+/**
+ * Parses raw user input into a structured command plus arguments.
+ *
+ * <p>The parser splits on the first space: the token before the space is taken
+ * as the command verb, and everything after it (if any) is preserved as the
+ * raw argument string. Unsupported verbs trigger an {@link UnknownInputException}.</p>
+ *
+ * <p>Supported commands (verbatim): {@code todo}, {@code list}, {@code mark},
+ * {@code unmark}, {@code event}, {@code deadline}, {@code bye}, {@code delete},
+ * {@code save}, {@code find}.</p>
+ *
+ * <p>Examples:</p>
+ * <pre>{@code
+ * "todo Buy milk"        -> command="todo",     args="Buy milk"
+ * "deadline submit /by 2025-10-05 23:59" -> command="deadline", args="submit /by 2025-10-05 23:59"
+ * "list"                 -> command="list",     args=""
+ * }</pre>
+ *
+ * @see Parser.ParsedCommand
+ */
 public class Parser {
 
     public static ParsedCommand parse(String input) throws UnknownInputException {

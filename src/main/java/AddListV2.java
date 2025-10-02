@@ -1,5 +1,13 @@
-import java.util.List;
+/**
+ * Class that implements the method that deals with the user commands
+ * Implement the other classes
+ * @see Ui
+ * @see Storage
+ * @see TaskList
+ * @see Parser
+ */
 
+import java.util.List;
 public class AddListV2 {
     public static void AddlistV2() throws Exception {
         Ui ui = new Ui();
