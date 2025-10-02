@@ -1,7 +1,7 @@
 # Victoria User Guide
 
 
-[screenshot of product ]("docs\image\Screenshot%202025-10-02%20234202.png")
+![screenshot of product ](docs\image\screenshot.png)
 
 
 Victoria is a lightweight, offline task-tracking chatbot you run from the terminal or inside IntelliJ.
