@@ -20,9 +20,11 @@ Output will give:
 1. Confirmation message that task was added 
 2. Example of what will appear on the list
 
-`ok added the following task bro:
+```
+ok added the following task bro:
 [ ] sleep
-now you got 1 tasks in your list.`
+now you got 1 tasks in your list.
+```
 
 
 ## Adding deadlines
