@@ -22,9 +22,9 @@ Format: `deadline [description of task] /by [deadline]`
 Example: `deadline sleep /by sunday`
 
 Output will give :
--1. confirmation message that task with deadline added
--2. display the description of task
--3. number of tasks currently in the list 
+1. confirmation message that task with deadline added
+2. display the description of task
+3. number of tasks currently in the list 
 
 ```
 okies brother. I added this deadline!
