@@ -9,16 +9,22 @@ It lets you add todos, deadlines, and events, then mark, unmark, search, and del
 Your tasks autosave to a file so they’re there the next time you launch.
 
 ## Adding to-dos
+Adds a task into the task list.
 
+Example:`todo 
 
 ## Adding deadlines
 
-Adds a task with a deadline.
+Adds a task with a deadline into the task list.
 
-Example: `deadline [description of task] /by [deadline]`
+Format: `deadline [description of task] /by [deadline]`
 
-Output will give a confirmation that task with deadline added, display the description of task
-and number of tasks currently in the list 
+Example: `deadline sleep /by sunday`
+
+Output will give :
+-1. confirmation message that task with deadline added
+-2. display the description of task
+-3. number of tasks currently in the list 
 
 ```
 okies brother. I added this deadline!
