@@ -6,7 +6,7 @@
 
 **Victoria** is a lightweight, offline task-tracking CLI chatbot youcan run from the terminal or inside IntelliJ.
 It lets you add tasks with sub categories of deadlines, events, mark and unmark.
-There is also a search, and delete with commands. 
+There is also a search, list, delete and save with commands. 
 Your tasks autosave to a file so they’re there the next time you launch.
 
 ## Adding to-dos
@@ -86,8 +86,23 @@ Nice la , I have marked it as done!
 
 
 ## Unmark a marked task 
+Unmarks a task that was previously marked as done.
+
+Prerequisite: The task must have already been marked done to be unmarked
+
+Format: `unmark [index of the marked task in list`
+
+Example: `unmark 2`
+
+Output will give: 
+1. Confirmation message that the marked task has been unmarked
+2. Example of what it will look like in the task list
 
 
+```
+Shag , I have marked it as undone!
+ [D][ ] sleep (by: sunday)
+```
 ## Feature ABC
 
 // Feature details
