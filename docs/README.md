@@ -103,11 +103,50 @@ Output will give:
 Shag , I have marked it as undone!
  [D][ ] sleep (by: sunday)
 ```
-## Feature ABC
-
-// Feature details
 
 
-## Feature XYZ
+## Listing out tasks 
+Lists out all the tasks currently in the task lists with their categories and status.
+
+Format: `list`
+
+Output will give the lists of tasks currently in the task list 
+
+```
+Here are your tasks bro:
+1. [ ] sleep
+2. [D][ ] sleep (by: sunday)
+3. [E][ ] sleep (from: Monday 2pm to: 4pm)
+```
+
+
+
+
+## Search for tasks with keywords
+Filter out the tasks with the keyword provided and display the filtered tasks in a list
+
+Format: `find [keyword]`
+
+Example list 
+```
+Here are your tasks bro:
+1. [ ] sleep
+2. [D][ ] sleep (by: sunday)
+3. [E][ ] sleep (from: Monday 2pm to: 4pm)
+4. [ ] eat
+5. [D][ ] eat (by: tuesday)
+```
+Wanting to filter sleep tasks:
+
+`find sleep`
+
+will output the tasks with the keyword sleep
+
+```
+Here are your tasks bro:
+1. [ ] sleep
+2. [D][ ] sleep (by: sunday)
+3. [E][ ] sleep (from: Monday 2pm to: 4pm)
+```
 
 // Feature details
