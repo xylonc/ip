@@ -21,7 +21,7 @@ public class AddListV2 {
             try {
                 pc = Parser.parse(input);
             } catch (UnknownInputException e) {
-                ui.showError("what saying you");
+                ui.showError("what saying you give me a command plez");
                 continue;
             }
 
@@ -60,8 +60,10 @@ public class AddListV2 {
                 }
             } catch (EmptyStringException e) {
                 ui.showError("Description cannot be empty.");
-            }catch(NothingFoundException e){
-                ui.showError("cant find anything eh");
+            } catch(NothingFoundException e){
+                ui.showError("cant find anything matching ur keyword eh");
+            } catch(WrongFormatException e){
+                ui.showError("format wrong , missing a /");
             } catch (Exception e) {
                 ui.showError(e.getMessage());
             }

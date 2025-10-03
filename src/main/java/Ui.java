@@ -80,6 +80,6 @@ public class Ui {
     }
 
     public void showError(String msg) {
-        System.out.println("siala got smt wrong\n" + msg);
+        System.out.println("siala got smt wrong:\n" + msg);
     }
 }

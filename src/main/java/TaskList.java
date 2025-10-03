@@ -55,21 +55,24 @@ public class TaskList {
         ui.showTaskAdded(t, size());
     }
 
-    public void mark(String args, Ui ui) {
+    public void mark(String args, Ui ui) throws EmptyStringException{
+        if (args.isEmpty()) throw new EmptyStringException();
         int index = Integer.parseInt(args.trim()) - 1;
         Task t = tasks.get(index);
         t.markDone();
         ui.showMarked(t, true);
     }
 
-    public void unmark(String args, Ui ui) {
+    public void unmark(String args, Ui ui) throws EmptyStringException {
+        if(args.isEmpty()) throw new EmptyStringException();
         int index = Integer.parseInt(args.trim()) - 1;
         Task t = tasks.get(index);
         t.markUndone();
         ui.showMarked(t, false);
     }
 
-    public void addDeadline(String args, Ui ui) {
+    public void addDeadline(String args, Ui ui) throws WrongFormatException {
+        if(!args.contains("/by")) throw new WrongFormatException();
         int byIndex = args.indexOf("/by");
         String description = args.substring(0, byIndex).trim();
         String by = args.substring(byIndex + 3).trim();
@@ -78,7 +81,8 @@ public class TaskList {
         ui.showAddedDeadline(t, size());
     }
 
-    public void addEvent(String args, Ui ui) {
+    public void addEvent(String args, Ui ui) throws WrongFormatException {
+        if(!args.contains("from") || !args.contains("to") || !args.contains("/")) throw new WrongFormatException();
         int indexFrom = args.indexOf("from");
         int indexTo = args.indexOf("to");
         int indexSlash = args.indexOf("/");

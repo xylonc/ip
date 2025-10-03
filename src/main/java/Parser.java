@@ -22,7 +22,7 @@ public class Parser {
 
     public static ParsedCommand parse(String input) throws UnknownInputException {
         String[] parts = input.split(" ", 2);
-        String command = parts[0];
+        String command = parts[0].toLowerCase();
         String arguments = parts.length > 1 ? parts[1] : "";
         switch (command) {
         case "todo":
