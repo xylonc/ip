@@ -45,7 +45,7 @@ Output will give:
 ```
 okies brother. I added this deadline!
 [D][ ] sleep (by: sunday)
-now you got: 1 tasks
+now you got: 2 tasks
 ```
 ## Adding events 
 Adds a task with the category of an event to the tasks list with a `[E]` 
@@ -63,9 +63,30 @@ Output will give:
 ```
 okies brother. I added this event!
 [E][ ] sleep (from: Monday 2pm to: 4pm)
-now you got: 1 tasks
+now you got: 3 tasks
 
 ```
+
+## Mark task as done
+Indicates that tasks are done by marking the with a `[X]`.
+
+Format: `mark [index of the task in the list]`
+
+Example: `mark 2`
+
+Output will give:
+1. Confirmation message of successfully marking the task
+2. Example of what will appear on the list (addition of `[X]`)
+
+```
+Nice la , I have marked it as done!
+ [D][X] sleep (by: sunday)
+ 
+```
+
+
+## Unmark a marked task 
+
 
 ## Feature ABC
 
