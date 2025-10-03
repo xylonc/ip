@@ -4,10 +4,18 @@
 ![screenshot of product ](/docs/image/screenshot.png)
 
 
-**Victoria** is a lightweight, offline task-tracking CLI chatbot youcan run from the terminal or inside IntelliJ.
+**Victoria** is a lightweight, offline task-tracking CLI chatbot you can run from the terminal or inside IntelliJ.
 It lets you add tasks with sub categories of deadlines, events, mark and unmark.
 There is also a search, list, delete and save with commands. 
 Your tasks autosave to a file so they’re there the next time you launch.
+
+## Quick start 
+Run the program using
+`java Victoria`
+
+## Exiting the program 
+Exit the program by using
+`bye`
 
 ## Adding to-dos
 Adds a task into the task list.
@@ -119,9 +127,6 @@ Here are your tasks bro:
 3. [E][ ] sleep (from: Monday 2pm to: 4pm)
 ```
 
-
-
-
 ## Search for tasks with keywords
 Filter out the tasks with the keyword provided and display the filtered tasks in a list
 
@@ -149,4 +154,29 @@ Here are your tasks bro:
 3. [E][ ] sleep (from: Monday 2pm to: 4pm)
 ```
 
-// Feature details
+## Delete task
+Deletes a specific task from the list.
+
+Format: `delete [index of the task in the list]`
+
+Example list:
+```
+Here are your tasks bro:
+1. [ ] sleep
+2. [D][ ] sleep (by: sunday)
+3. [E][ ] sleep (from: sunday 2pm to: 4pm)
+```
+
+Wanting to delete the second task
+
+`delete 2`
+
+will output:
+1. Confirmation message that the task has been deleted 
+2. Show the task that was deleted 
+3. Number of tasks left 
+```
+thy task have been vanquished!
+[D][ ] sleep (by: sunday)
+now you only left with 2 tasks!
+```
